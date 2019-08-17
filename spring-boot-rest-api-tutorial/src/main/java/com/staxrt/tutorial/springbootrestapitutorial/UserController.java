@@ -24,20 +24,16 @@ public class UserController {
   @Autowired
 
   private UserRepository userRepository;
+  /*public List<Book> list() {
+        return bookRepository.findAll();
+    }*/
 
-  /**
-
-   * Get all users list.
-
-   *
-
-   * @return the list
-
-   */
+  
 
   @GetMapping("/users")
+  
 
-  public List<Users> getAllUsers() {
+  public List<User> getAllUsers() {
 
     return userRepository.findAll();
 
@@ -68,49 +64,26 @@ public class UserController {
 
   }
 
-  /**
+  
 
-   * Create user user.
+  
+  
+  @PostMapping(path = "/users", consumes = "application/json")
 
-   *
-
-   * @param user the user
-
-   * @return the user
-
-   */
-
-  @PostMapping("/users")
-
-  public User createUser(@Valid @RequestBody User user) {
+  public User createUser(@RequestBody User user) {
 
     return userRepository.save(user);
 
   }
 
-  /**
-
-   * Update user response entity.
-
-   *
-
-   * @param userId the user id
-
-   * @param userDetails the user details
-
-   * @return the response entity
-
-   * @throws ResourceNotFoundException the resource not found exception
-
-   */
-
-  @PutMapping("/users/{id}")
+  
+  @PutMapping(path = "/users/{id}", consumes = "application/json")
 
   public ResponseEntity<User> updateUser(
 
-      @PathVariable(value = "id") Long userId, @Valid @RequestBody User userDetails)
+      @PathVariable(value = "id") Long userId, @RequestBody User userDetails)
 
-      {
+      { 
 
     Optional<User> user = userRepository.findById(userId);
 
@@ -120,21 +93,9 @@ public class UserController {
 
   }
 
-  /**
+  
 
-   * Delete user map.
-
-   *
-
-   * @param userId the user id
-
-   * @return the map
-
-   * @throws Exception the exception
-
-   */
-
-  @DeleteMapping("/user/{id}")
+  @DeleteMapping(path = "/user/{id}", consumes = "application/json")
 
   public Map<String, Boolean> deleteUser(@PathVariable(value = "id") Long userId) {
 

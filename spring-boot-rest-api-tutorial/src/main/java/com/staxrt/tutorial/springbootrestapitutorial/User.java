@@ -1,6 +1,6 @@
 package com.staxrt.tutorial.springbootrestapitutorial;
 
-import java.sql.Date;
+//import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,10 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
+//import org.springframework.data.annotation.CreatedBy;
+//import org.springframework.data.annotation.CreatedDate;
+//import org.springframework.data.annotation.LastModifiedBy;
+//import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
@@ -30,51 +30,18 @@ public class User {
 
     private long  id;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
 
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
 
     private String lastName;
 
-    @Column(name = "email_address", nullable = false)
+    @Column(name = "email_address")
 
     private String email;
 
-    @Column(name = "created_at", nullable = false)
-
-    @CreatedDate
-
-    private Date createdAt;
-
-    @Column(name = "created_by", nullable = false)
-
-    @CreatedBy
-
-    private String createdBy;
-
-    @Column(name = "updated_at", nullable = false)
-
-    @LastModifiedDate
-
-    private Date updatedAt;
-
-    @Column(name = "updated_by", nullable = false)
-
-    @LastModifiedBy
-
-    private String updatedBy;
-
-  /**
-
-   * Gets id.
-
-   *
-
-   * @return the id
-
-   */
 
   public long getId() {
 
@@ -82,15 +49,7 @@ public class User {
 
     }
 
-  /**
-
-   * Sets id.
-
-   *
-
-   * @param id the id
-
-   */
+  
 
   public void setId(long id) {
 
@@ -98,31 +57,14 @@ public class User {
 
     }
 
-  /**
-
-   * Gets first name.
-
-   *
-
-   * @return the first name
-
-   */
-
+  
   public String getFirstName() {
 
         return firstName;
 
     }
 
-  /**
-
-   * Sets first name.
-
-   *
-
-   * @param firstName the first name
-
-   */
+ 
 
   public void setFirstName(String firstName) {
 
@@ -130,15 +72,7 @@ public class User {
 
     }
 
-  /**
-
-   * Gets last name.
-
-   *
-
-   * @return the last name
-
-   */
+ 
 
   public String getLastName() {
 
@@ -146,15 +80,7 @@ public class User {
 
     }
 
-  /**
-
-   * Sets last name.
-
-   *
-
-   * @param lastName the last name
-
-   */
+  
 
   public void setLastName(String lastName) {
 
@@ -162,15 +88,7 @@ public class User {
 
     }
 
-  /**
-
-   * Gets email.
-
-   *
-
-   * @return the email
-
-   */
+ 
 
   public String getEmail() {
 
@@ -178,148 +96,12 @@ public class User {
 
     }
 
-  /**
-
-   * Sets email.
-
-   *
-
-   * @param email the email
-
-   */
+ 
 
   public void setEmail(String email) {
 
         this.email = email;
-
-    }
-
-  /**
-
-   * Gets created at.
-
-   *
-
-   * @return the created at
-
-   */
-
-  public Date getCreatedAt() {
-
-        return createdAt;
-
-    }
-
-  /**
-
-   * Sets created at.
-
-   *
-
-   * @param createdAt the created at
-
-   */
-
-  public void setCreatedAt(Date createdAt) {
-
-        this.createdAt = createdAt;
-
-    }
-
-  /**
-
-   * Gets created by.
-
-   *
-
-   * @return the created by
-
-   */
-
-  public String getCreatedBy() {
-
-        return createdBy;
-
-    }
-
-  /**
-
-   * Sets created by.
-
-   *
-
-   * @param createdBy the created by
-
-   */
-
-  public void setCreatedBy(String createdBy) {
-
-        this.createdBy = createdBy;
-
-    }
-
-  /**
-
-   * Gets updated at.
-
-   *
-
-   * @return the updated at
-
-   */
-
-  public Date getUpdatedAt() {
-
-        return updatedAt;
-
-    }
-
-  /**
-
-   * Sets updated at.
-
-   *
-
-   * @param updatedAt the updated at
-
-   */
-
-  public void setUpdatedAt(Date updatedAt) {
-
-        this.updatedAt = updatedAt;
-
-    }
-
-  /**
-
-   * Gets updated by.
-
-   *
-
-   * @return the updated by
-
-   */
-
-  public String getUpdatedBy() {
-
-        return updatedBy;
-
-    }
-
-  /**
-
-   * Sets updated by.
-
-   *
-
-   * @param updatedBy the updated by
-
-   */
-
-  public void setUpdatedBy(String updatedBy) {
-
-        this.updatedBy = updatedBy;
-
-    }
+ 
+  }
 
 }
